@@ -2,6 +2,8 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\AdminController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,23 +16,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/home', function () {
-    //dd(parameter twy ko san chin yin "dd" ko thone tl)
-    // dd("aung ko ko khant");
-    //return ("retrun pyan pay tl ko lo chin dae nY yr ko")
-    return view("Home");
-});
+// HomeRoute
+Route::get('/home', [HomeController::class,"index"] );
+Route::post('/home',[HomeController::class,"userdata"] );
 
-Route::post('/home', function (Request $req) {
-    // return "work";
-    // dd($req->name." " .$req->age);
-    return "<h2>Name is $req->name . Age is $req->age</h2>";
-});
-
-Route::get('/admin', function () {
-    return view("admin.index");
-});
-
+// AdminRoute
+Route::get('/admin', [AdminController::class,"index"]);
 Route::get('/{name}/{id}', function ($name,$id) {
     return "<h2>Name is ".$name." ID is".$id."</h2>";
 });

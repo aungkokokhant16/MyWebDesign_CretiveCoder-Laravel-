@@ -15,5 +15,11 @@
         <br><br>
        <input type="submit" value="post">
    </form>
+
+   {{-- Feedback Date --}}
+
+   @if (Session("message"))
+       <div><h2>{{Session("message")}}</h2></div>
+   @endif
 </body>
 </html>
