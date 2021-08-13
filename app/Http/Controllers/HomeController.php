@@ -20,4 +20,13 @@ class HomeController extends Controller
         $age =$req->age;
         return back()->with("message","Name is $req->name . Age is $req->age");
     }
+
+    function about(){
+        return view("About");
+    }
+
+    function contact(){
+        return view("Contact");
+    }
+
 }

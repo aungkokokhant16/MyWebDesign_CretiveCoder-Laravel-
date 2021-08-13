@@ -25,3 +25,6 @@ Route::get('/admin', [AdminController::class,"index"]);
 Route::get('/{name}/{id}', function ($name,$id) {
     return "<h2>Name is ".$name." ID is".$id."</h2>";
 });
+
+Route::get('/about',[HomeController::class,"about"]);
+Route::get('/contact',[HomeController::class,"contact"]);

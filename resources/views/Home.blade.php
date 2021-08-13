@@ -1,12 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
+@extends("Layout.Layout")
+
+@section("content")
+    <h1>I am Home Page</h1>
    <form action="{{url('/home')}}" method="post">
         @csrf
 
@@ -19,7 +14,7 @@
    {{-- Feedback Date --}}
 
    @if (Session("message"))
-       <div><h2>{{Session("message")}}</h2></div>
+       <<h2>{{Session("message")}}</h2>
    @endif
-</body>
-</html>
+
+   @endsection
