@@ -17,8 +17,8 @@ use App\Http\Controllers\AdminController;
 */
 
 // HomeRoute
-Route::get('/home', [HomeController::class,"index"] );
-Route::post('/home',[HomeController::class,"userdata"] );
+Route::get('/', [HomeController::class,"index"] );
+Route::post('/',[HomeController::class,"userdata"] );
 
 // AdminRoute
 Route::get('/admin', [AdminController::class,"index"]);

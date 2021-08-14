@@ -14,11 +14,27 @@ class HomeController extends Controller
     }
 
     function userdata(Request $req) {
-        // return "work";
-        // dd($req->name." " .$req->age);
-        $name=$req->name;
-        $age =$req->age;
-        return back()->with("message","Name is $req->name . Age is $req->age");
+
+        $validation=$req->validate([
+            "name"=>"required",
+            "age"=>"required"
+        ]);
+
+        if($validation){
+            // return "work";
+            // dd($req->name." " .$req->age);
+            $name=$req->name;
+            $age =$req->age;
+            return back()->with("message","Name is $req->name . Age is $req->age");
+        }else{
+            return back()->withErrors($validation);
+        }
+
+
+
+
+
+
     }
 
     function about(){
